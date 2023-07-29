@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>ABOUT</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                height:100vh;
+                background-image:url('telangana.jpg');
+                background-size: cover;
+                background-position: center;
+                backdrop-filter: saturate(180%) blur(3px);
+            }
+            li{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 1rem;
+            }
+            a:hover{
+                color: orange;
+            }
+            header{
+                position:relative;
+                padding: 0 2rem;
+            }
+            .navbar{
+                width: 100%;
+                height:60px;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .navbar .logo a{
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .navbar .links{
+                display: flex;
+                gap:2rem;
+            }
+            .navbar .toggle_btn{
+                color: #fff;
+                font-size: 1.5rem;
+                cursor: pointer;
+                display: none;
+            }
+            .dropdown_menu{
+                display: none;
+                position: absolute;
+                right: 2rem;
+                top:60px;
+                height: 0;
+                width:300px;
+                background: rgba(254, 254, 11, 0.1);
+                border-radius: 10px;
+                overflow: hidden;
+                transform: height 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+            }
+            .dropdown_menu.open{
+                height: 240px;
+            }
+            .dropdown_menu li{
+                padding: 0.7rem;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media(max-width:992px){
+                .navbar .links{
+                    display: none;
+                }
+                .navbar .toggle_btn{
+                    display: block;
+                }
+                .dropdown_menu{
+                    display: block;
+                }
+            }
+            @media(max-width:576px){
+                .dropdown_menu{
+                    left:2rem;
+                    width:unset;
+                }
+            }
+            .about-us{
+  height: 100vh;
+  width: 100%;
+  padding: 90px 0;
+  background: #ddd;
+}
+.pic{
+  height: auto;
+  width:  302px;
+}
+.about{
+  width: 1130px;
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.text{
+  width: 540px;
+}
+.text h2{
+  font-size: 90px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.text h5{
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+span{
+  color: #4070f4;
+}
+.text p{
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+.data{
+  margin-top: 30px;
+}
+.hire{
+  font-size: 18px;
+  background: #4070f4;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.hire:hover{
+  background: #000;
+  border: 1px solid #4070f4;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="home.html">VISIT-TELANGANA</a></div>
+                <ul class="links">
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="visit.html">VISIT</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="visit.html">VISIT</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </div>
+        </header>
+        <section class="about-us">
+            <div class="about">
+              <!--<img src="girl.png" class="pic">-->
+              <div class="text">
+                <h2>About Us</h2>
+                <h5>Front-end Developer & <span>Designer</span></h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus ad sed harum itaque ullam enim quas, veniam accusantium, quia animi id eos adipisci iusto molestias asperiores explicabo cum vero atque amet corporis! Soluta illum facere consequuntur magni. Ullam dolorem repudiandae cumque voluptate consequatur consectetur, eos provident necessitatibus reiciendis corrupti!</p>
+                <div class="data">
+                <a href="#" class="hire">Hire Me</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        <script>
+            const toggleBtn=document.querySelector('.toggle_btn')
+            const toggleBtnIcon=document.querySelector('.toggle_btn i')
+            const dropDownMenu=document.querySelector('.dropdown_menu')
+            toggleBtn.onclick=function(){
+                dropDownMenu.classList.toggle('open')
+                const isOpen=dropDownMenu.classList.contains('open')
+                toggleBtnIcon.classList=isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+        </script>
+    </body>
+</html>

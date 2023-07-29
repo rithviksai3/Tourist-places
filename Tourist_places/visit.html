@@ -1,0 +1,1398 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>EXPLORE</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                background-color: black;
+            }
+            li{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 1rem;
+            }
+            a:hover{
+                color: orange;
+            }
+            header{
+                position:relative;
+                padding: 0 2rem;
+            }
+            .navbar{
+                width: 100%;
+                height:60px;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .navbar .logo a{
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .navbar .links{
+                display: flex;
+                gap:2rem;
+            }
+            .navbar .toggle_btn{
+                color: #fff;
+                font-size: 1.5rem;
+                cursor: pointer;
+                display: none;
+            }
+            .dropdown_menu{
+                display: none;
+                position: absolute;
+                right: 2rem;
+                top:60px;
+                height: 0;
+                width:300px;
+                background: rgba(254, 254, 11, 0.1);
+                border-radius: 10px;
+                overflow: hidden;
+                transform: height 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+            }
+            .dropdown_menu.open{
+                height: 240px;
+            }
+            .dropdown_menu li{
+                padding: 0.7rem;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media(max-width:992px){
+                .navbar .links{
+                    display: none;
+                }
+                .navbar .toggle_btn{
+                    display: block;
+                }
+                .dropdown_menu{
+                    display: block;
+                }
+            }
+            @media(max-width:576px){
+                .dropdown_menu{
+                    left:2rem;
+                    width:unset;
+                }
+            }
+            section#hero{
+                height:calc(100vh - 60px);
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: #fff;
+            }
+            #hero h2{
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+            #p1{
+                position: absolute;
+                left:35%;
+                font-style: italic;
+                font-size: 40px;
+            }
+            .container{
+                position:absolute;
+                top:140px;  
+                padding-left: 100px; 
+                padding-right: 100px;
+            }
+            #container1{
+                position:absolute;
+                top:140px;  
+                padding-left: 100px; 
+                padding-right: 100px;           
+            }
+            .container .img-container{
+                display:flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+                padding: 10px;
+            }
+            .container .img-container .img{
+                height:250px;
+                width: 350px;
+                border:10px solid #fff;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .container .img-container .img img{
+                height:100%;
+                width: 100%;
+                object-fit: cover;
+                transition: 0.2s linear;
+            }
+            .container .img-container .img:hover img{
+                transform: scale(1.1);
+            }
+            .container .popup-image{
+                position:fixed;
+                top:0;left:0;
+                background: rgba(0,0,0,0.9);
+                height: 100%;
+                width:100%;
+                z-index: 100;
+                display: none;
+            }
+            .container .popup-image span{
+                position: absolute;
+                top:0;right: 10px;
+                font-size: 40px;
+                font-weight: bolder;
+                color: #fff;
+                cursor: pointer;
+                z-index: 100;
+            }
+            .container .popup-image .m1{
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                border: 5px solid #fff;
+                border-radius: 5px;
+                width:750px;
+                height:450px;
+                object-fit: cover;
+                background-color: #fff;
+            }
+            .container .popup-image .m1 a{
+                position: absolute;
+                top:25%;
+                right:30%;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="home.html">VISIT-TELANGANA</a></div>
+                <ul class="links">
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="visit.html">VISIT</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="visit.html">VISIT</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </div>
+        </header>
+        <main>
+            <section id="hero">
+                <div class="search">
+                        <h2>Click on  Your Place</h2>
+                    </div>
+            </section>
+        </main>
+        <div id="container1" class="container">
+            <h2 style="color: #fff;">PLACES:</h2>
+            <div class="img-container">
+                <div class="img" id="c1">
+                    <img src="charminar.jpg">
+                </div>
+                <div class="img" id="c2">
+                    <img src="mecca masjid.jpg">
+                </div>
+                <div class="img" id="c3">
+                    <img src="mount opera.jpg">
+                </div>
+                <div class="img" id="c4">
+                    <img src="nagarjuna sagar dam.jpg">
+                </div>
+                <div class="img" id="c5">
+                    <img src="ramoji film city.jpg">
+                </div>
+                <div class="img" id="c6">
+                    <img src="sangi temple.jpg">
+                </div>
+                <div class="img" id="c7">
+                    <img src="warangal fort.jpg">
+                </div>
+                <div class="img" id="c8">
+                    <img src="hussain sagar.jpg">
+                </div>
+                <div class="img" id="c9">
+                    <img src="golkonda fort.jpg">
+                </div>
+                <div class="img" id="c10">
+                    <img src="ananthagiri hills.jpg">
+                </div>
+                <div class="img" id="c11">
+                    <img src="zoo park.jpg">
+                </div>
+                <div class="img" id="c12">
+                    <img src="ali sagar reserviour(niz).jpg">
+                </div>
+                <div class="img" id="c13">
+                    <img src="ambedkar statue.jpg">
+                </div>
+                <div class="img" id="c14">
+                    <img src="thousand pillar temple.jpg">
+                </div>
+                <div class="img" id="c15">
+                    <img src="badrachalam.jpg">
+                </div>
+                <div class="img" id="c16">
+                    <img src="basara.jpg">
+                </div>
+                <div class="img" id="c17">
+                    <img src="birla mandir.jpg">
+                </div>
+                <div class="img" id="c18">
+                    <img src="cheya someshwara temple.jpg">
+                </div>
+                <div class="img" id="c19">
+                    <img src="dichpalli temple(niz).jpg">
+                </div>
+                <div class="img" id="c20">
+                    <img src="elgandal fort(kar).jpg">
+                </div>
+                <div class="img" id="c21">
+                    <img src="jainath temple.jpg">
+                </div>
+                <div class="img" id="c22">
+                    <img src="kadam dam.jpg">
+                </div>
+                <div class="img" id="c23">
+                    <img src="kaleshwaram temple(kar).jpg">
+                </div>
+                <div class="img" id="c24">
+                    <img src="kanakai water falls.jpg">
+                </div>
+                <div class="img" id="c25">
+                    <img src="kawal wild life sanctuary.jpg">
+                </div>
+                <div class="img" id="c26">
+                    <img src="khammam fort.jpg">
+                </div>
+                <div class="img" id="c27">
+                    <img src="koilsagar dam.jpg">
+                </div>
+                <div class="img" id="c28">
+                    <img src="kuntala water falls.jpg">
+                </div>
+                <div class="img" id="c29">
+                    <img src="lakaram lake.jpg">
+                </div>
+                <div class="img" id="c30">
+                    <img src="lower manair dam(kar).jpg">
+                </div>
+                <div class="img" id="c31">
+                    <img src="mallela theertham.jpg">
+                </div>
+                <div class="img" id="c32">
+                    <img src="medak church.jpg">
+                </div>
+                <div class="img" id="c33">
+                    <img src="medak fort.jpg">
+                </div>
+                <div class="img" id="c34">
+                    <img src="molangur fort(kar).jpg">
+                </div>
+                <div class="img" id="c35">
+                    <img src="pachala someshwar temple.jpg">
+                </div>
+                <div class="img" id="c36">
+                    <img src="pillalamarri shiva temple.jpg">
+                </div>
+                <div class="img" id="c37">
+                    <img src="pocharam reservoir.jpg">
+                </div>
+                <div class="img" id="c38">
+                    <img src="pocharam wild  life sanctuary(niz).jpg">
+                </div>
+                <div class="img" id="c39">
+                    <img src="pochera water falls.jpg">
+                </div>
+                <div class="img" id="c40">
+                    <img src="polair reserviour.jpg">
+                </div>
+                <div class="img" id="c41">
+                    <img src="pranahitha.jpg">
+                </div>
+                <div class="img" id="c42">
+                    <img src="rajolibanda dam.jpg">
+                </div>
+                <div class="img" id="c43">
+                    <img src="ramappa lake.jpg">
+                </div>
+                <div class="img" id="c44">
+                    <img src="ramappa temple.jpg">
+                </div>
+                <div class="img" id="c45">
+                    <img src="singur dam.jpg">
+                </div>
+                <div class="img" id="c46">
+                    <img src="sri ranga nayaka temple.jpg">
+                </div>
+                <div class="img" id="c47">
+                    <img src="swamy ayappa temple.jpg">
+                </div>
+                <div class="img" id="c48">
+                    <img src="vemulawada(kar).jpg">
+                </div>
+                <div class="img" id="c49">
+                    <img src="salar jung museum.jpg">
+                </div>
+            </div>
+            <div id="popup-image1" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="charminar.jpg">
+                    <a href="https://maps.google.com/?cid=14653140768444716027" style="color: black;">📍MAPS</a>
+                    <p>The Charminar (lit.'four minarets') is a monument located in Hyderabad, Telangana, India.
+                    Constructed in 1591, the landmark is a symbol of Hyderabad and officially incorporated in the emblem of Telangana.
+                    The Charminar's long history includes the existence of a mosque on its top floor for more than 425 years.
+                    While both historically and religiously significant, it is also known for its popular and busy local markets
+                    surrounding the structure, and has become one of the most frequented tourist attractions in Hyderabad. 
+                    Charminar is also a site of numerous festival celebrations, such as Eid-ul-adha and Eid al-Fitr,
+                    as it is adjacent to the city's main mosque, the Makkah Masjid.</p>
+                </div>
+            </div>
+            <div id="popup-image2" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="mecca masjid.jpg">
+                    <a href="https://goo.gl/maps/txQJ3kt2WYVzzpm38" style="color: black;">📍MAPS</a>
+                    <p>Makkah Masjid or Mecca Masjid, is a congregational mosque in Hyderabad, India.
+                       It is one of the largest mosques in India with a capacity of 10,000 people.
+                       The mosque was built during the 17th century, and is a state-protected monument.
+                       It serves as the primary mosque for the Old City of Hyderabad,and is located close to the historic landmarks 
+                       of Charminar, Chowmahalla Palace and Laad Bazaar.
+                       Muhammad Qutb Shah, the sixth ruler of the Qutb Shahi dynasty, commissioned bricks to be made from the soil 
+                       brought from Mecca, the holiest site of Islam, and used them in the construction of the central arch of 
+                       the mosque, thus giving the mosque its name.</p>
+                </div>
+            </div>
+            <div id="popup-image3" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="mount opera.jpg">
+                    <a href="https://goo.gl/maps/jUF4y3ZnxRQ5RN4r5" style="color: black;">📍MAPS</a>
+                    <p>Mount Opera Theme Park Hyderabad: Located at a distance of approximately 38 kms from the main city,
+                         Mount Opera Theme park is one of the popular tourist places of Hyderabad offering loads of entertainment
+                          and fun to each and everyone. Situated on the Hyderabad-Vijayawada National Highway, the Mount Opera 
+                          theme park is just 4 kms away from the popular Ramoji Film City.
+                    </p>
+                </div>
+            </div>
+            <div id="popup-image4" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="nagarjuna sagar dam.jpg">
+                    <a href="https://goo.gl/maps/KkGt51SqcDVZzthV7" style="color: black;">📍MAPS</a>
+                    <p>Nagarjuna Sagar Dam is a masonry dam across the Krishna River at Nagarjuna Sagar which straddles the 
+                        border between Palnadu district in Andhra Pradesh and Nalgonda district in Telangana.[2]
+                         The dam provides irrigation water to the districts of Palnadu, Guntur, Nalgonda, Prakasam, Khammam,
+                          Krishna, and parts of West Godavari. It is also a source of electricity generation for the national grid
+                        .[3][4][5]
+                        Constructed between 1955 and 1967, the dam created a water reservoir with gross storage capacity of 11.472
+                         billion cubic metres (405.1×109 cu ft), its effective capacity is 6.92 cubic km or 244.41 Tmcft. 
+                         The dam is 124 metres (407 ft) tall from its deepest foundation and 1.6 kilometres (5,200 ft) long 
+                         with 26 flood gates which are 13 metres (42 ft) wide and 14 metres (45 ft) tall.[6] It is jointly 
+                         operated by Andhra Pradesh and Telangana.[2][7]</p>
+                </div>
+            </div>
+            <div id="popup-image5" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="ramoji film city.jpg">
+                    <a href="https://goo.gl/maps/TmYX4VKrqSM5RKJ8A" style="color: black;">📍MAPS</a>
+                    <p>Ramoji Film City is an integrated film studio facility located in Abdullahpurmet, Hyderabad, India. 
+                        Spread over 1,666 acres (674 ha),[1][2] it is the largest film studio complex in the world[3][4][5]
+                         and as such has been certified by the Guinness World Records.[6] It was established by Telugu media 
+                         tycoon Ramoji Rao in 1996.[7][8][1] The Guardian described Ramoji Film City as "city within a city."[3]
+                        Ramoji Film City Entrance
+                        It is also a thematic holiday destination and a popular tourism and recreation centre, containing natural and 
+                        artificial attractions including an amusement park. Around 1.5 million tourists visit the place every year.
+                        [9][5][7]</p>
+                </div>
+            </div>
+            <div id="popup-image6" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="sangi temple.jpg">
+                    <a href="https://goo.gl/maps/CLfy1mvnSUQcg4qb9" style="color: black;">📍MAPS</a>
+                    <p>Sanghi Temple, which is said to be the replica of Tirumala temple is located at Sanghi Nagar in Telangana
+                         in India, is about 35 km from Hyderabad city.[1]
+
+                        The sacred Raja Gopuram, which is very tall, can be seen from several kilometers away.
+                        
+                        The temple is located on the top of Paramanand Giri hill, which attracts a number of devotees.
+                        
+                        The temple is managed by Mrs Anita Sanghi of the Sanghi Family.</p>
+                </div>
+            </div>
+            <div id="popup-image7" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="warangal fort.jpg">
+                    <a href="https://goo.gl/maps/i63vMruGkd6a9SrK7" style="color: black;">📍MAPS</a>
+                    <p>Warangal Fort is located in Warangal District, Telangana, India. It was the capital city of Kakatiya 
+                        dynasty and Musunuri Nayakas. It appears to have existed since at least the 12th century when it was the
+                         capital of the Kakatiyas. The fort has four ornamental gates, known as Kakatiya Kala Thoranam, that 
+                         originally formed the entrances to a now ruined great Shiva temple. The Kakatiyan arch has been adopted \
+                         and officially incorporated into the emblem of Telangana after the bifurcation of Andhra Pradesh.[1]
+                          The fort is included in the "tentative list" of UNESCO World Heritage Site and was submitted by the 
+                          Permanent Delegation of India to UNESCO on 10/09/2010</p>
+                </div>
+            </div>
+            <div id="popup-image8" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="hussain sagar.jpg">
+                    <a href="https://goo.gl/maps/GuwEC48h2QmEKkDD9" style="color: black;">📍MAPS</a>
+                    <p>Hussain Sagar (alternatively referred to as Tank Bund;[1] Telugu pronunciation: [ɦusen sɑːgər]) is a heart-shaped lake 
+                        in Hyderabad, Telangana, built by Ibrahim Quli Qutb Shah in 1563. It is spread across an area of 5.7 square kilometres 
+                        (2.2 sq mi) and is fed by the River Musi. A large monolithic statue of the Gautama Buddha, erected in 1992, stands on 
+                        Gibraltar Rock in the middle of the lake. It also separates the city centre of Hyderabad from its neighbourhood 
+                        Secunderabad. The maximum depth of the lake is 32 feet (9.8 m)</p>
+                </div>
+            </div>
+            <div id="popup-image9" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="golkonda fort.jpg">
+                    <a href="https://goo.gl/maps/paoZywpErE8yQvL19" style="color: black;">📍MAPS</a>
+                    <p>Golconda is a historic fortress and ruined city located in the western outskirts of Hyderabad, Telangana, India.
+                    It was originally called Mankal (mānugallu).[1][3] The fort was originally built by Kakatiya ruler Pratāparudra 
+                    in the 11th century out of mud walls.[3] It was ceded to the Bahmani Kings by Deo Rai, Rajah of Warangal during 
+                    the reign of Sultan Muhammad Shah (1358–1375 A.D.) of the Bahmani Sultanate.[3] Following the death of Sultan 
+                    Mahmood Shah, the Sultanate disintegrated and Sultan Quli, who had been appointed as the Governor of Hyderabad 
+                    by the Bahmani Kings, fortified city and made it the capital of the Golconda Sultanate. Because of the vicinity 
+                    of diamond mines, especially Kollur Mine, Golconda flourished as a trade centre of large diamonds known as 
+                    Golconda Diamonds. Golconda fort is currently abandoned and in ruins.</p>
+                </div>
+            </div>
+            <div id="popup-image10" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="ananthagiri hills.jpg">
+                    <a href="https://goo.gl/maps/Jx41nMGb9PoCSBJG7" style="color: black;">📍MAPS</a>
+                    <p>Ananthagiri Hills is located in Vikarabad district,[1] Telangana, India.[2][3][4] The water flows from these hills to
+                         Osman Sagar, also known as Gandipet lake, and Himayathsagar.
+                        It is one of the dense forests in Telangana. Ananthagiri Temple is located in this forested area. It is the birthplace of
+                         Musi river, also called as Muchkunda River, which flows through Hyderabad, 5 km from Vikarabad.                
+                        Ananthagiri forest
+                        Anantha Padmanabhaswamy Temple
+                        It is one of the earliest habitat areas. Ancient caves, medieval fort structures and temple shows the antiquity of this area.</p>
+                </div>
+            </div>
+            <div id="popup-image11" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="zoo park.jpg">
+                    <a href="https://goo.gl/maps/zEJHhiWQA65Ut8XX7" style="color: black;">📍MAPS</a>
+                    <p>The zoo occupies 380 acres (150 ha) and is adjacent to the 600-acre (240 ha) Mir Alam Tank. 
+                        Nearly 100 species of birds, animals and reptiles are housed at the zoo, including indigenous animals 
+                        like the Indian rhino, Asiatic lion, Bengal tiger, panther, gaur, Indian elephant, slender loris, python, 
+                        as well as deer, antelopes and birds. The 600-acre (240 ha) Mir Alam Tank with its unique multiple arched bund
+                         (embankment), attracts hundreds of migratory birds, providing yet another attraction for the zoo.[3]</p>
+                </div>
+            </div>
+            <div id="popup-image12" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="ali sagar reserviour(niz).jpg">
+                    <a href="https://goo.gl/maps/aAD5vC69FctF9eTz8" style="color: black;">📍MAPS</a>
+                    <p>Alisagar is a park, tourist attraction and an irrigation project which is 13 km (6.2 mi) from Nizamabad and 2 km (1.2 mi) 
+                        off the Nizamabad-Bodhan road. The park was opened by the Nizam of Hyderabad in 1928. The park contains forested areas, 
+                        a summer house, well laid out gardens, a reservoir and island, and a hilltop guest house all of which make it a favored
+                         getaway location. Additional attractions include a deer park, and facilities for trekking and water sports.</p>
+                </div>
+            </div>
+            <div id="popup-image13" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="ambedkar statue.jpg">
+                    <a href="https://goo.gl/maps/knRJtmUG1iTyyjZv8" style="color: black;">📍MAPS</a>
+                    <p>The Statue of Equality also known as the Dr. Babasaheb Ambedkar Memorial is a monument under-construction 
+                        dedicated to B. R. Ambedkar, the 20th-century Indian intellectual and the father of the Indian Constitution.
+                         The statue will be located at Indu Mills Compound in Mumbai in the state of Maharashtra.[4][5] The statue of 
+                         Babasaheb Ambedkar will be 137.3-metre (450 ft) in total height, including a 30.5-metre (100 ft) pedestal
+                         .[6][7] The Ambedkar statue will be the third tallest statue in the world after the Statue of Unity (182 m)
+                          and the Spring Temple Buddha (153 m).[8]</p>
+                </div>
+            </div>
+            <div id="popup-image14" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="thousand pillar temple.jpg">
+                    <a href="https://goo.gl/maps/3n3adSzUGT67kk4W8" style="color: black;">📍MAPS</a>
+                    <p>The Thousand Pillar Temple or Rudreswara Swamy Temple[1] is a historic Hindu temple located in the town of 
+                        Hanamakonda, Telangana State, India.[2] It is dedicated to Lord Shiva, Vishnu and Surya. Thousand Pillar 
+                        Temple, along with Warangal Fort, Kakatiya Kala Thoranam and Ramappa Temple are added to the tentative list
+                         of World Heritage sites recognised by UNESCO.[3]</p>
+                </div>
+            </div>
+            <div id="popup-image15" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="badrachalam.jpg">
+                    <a href="https://goo.gl/maps/g3zdBxWnLeyDoSAP6" style="color: black;">📍MAPS</a>
+                    <p>The Sri Sita Ramachandraswamy temple is a Hindu temple dedicated to Rama, a prominent avatar of the god Vishnu.
+                         It is located on the banks of the Godavari River in the town of Bhadrachalam in east Telangana, India.
+                          Often simply referred to as Bhadrachalam or Bhadradri, the temple is considered one of the Divya Kshetrams
+                           of Godavari and is also revered as Dakshina Ayodhya.</p>
+                </div>
+            </div>
+            <div id="popup-image16" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="basara.jpg">
+                    <a href="https://goo.gl/maps/ZhMBXrqaUqGXsNuz6" style="color: black;">📍MAPS</a>
+                    <p>Basara is a census town in Nirmal district in the state of Telangana, India. It is located about 208 
+                        kilometres (129 mi) north of the state capital Hyderabad, 34 kilometres (21 mi) from Nizamabad and 73 
+                        kilometres (45 mi) from the district headquarters Nirmal.[1]</p>
+                </div>
+            </div>
+            <div id="popup-image17" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="birla mandir.jpg">
+                    <a href="https://goo.gl/maps/HByHMMTNAsNmXVhq6" style="color: black;">📍MAPS</a>
+                    <p>Birla Mandir is a Hindu temple, built on a 280 feet (85 m) high hillock called Naubath Pahad on a 13 acres 
+                        (53,000 m2) plot in Hyderabad, Telangana, India. The construction took 10 years and was opened in 1976 by
+                         Swami Ranganathananda of Ramakrishna Mission. The temple was constructed by Birla Foundation, which has 
+                         also constructed several similar temples across India, all of which are known as Birla Mandir.</p>
+                </div>
+            </div>
+            <div id="popup-image18" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="cheya someshwara temple.jpg">
+                    <a href="https://goo.gl/maps/av5nFFUGbGp8Hwqd7" style="color: black;">📍MAPS</a>
+                    <p>Chaya Someswara Temple, also known as the Chaya Someshvara Swamy Alayam or the Saila-Somesvara temple, is 
+                        a Saivite Hindu temple located in Panagal, Nalgonda district of Telangana, India.[1][2] It was built around 
+                        the mid 11th-century during the rule of the Kunduru Chodas (a branch of Telugu Cholas), supported and
+                         embellished further by later Hindu dynasties of Telangana.[3] Some date it to late 11th to early 
+                         12th-century.[4][5]</p>
+                </div>
+            </div>
+            <div id="popup-image19" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="dichpalli temple(niz).jpg">
+                    <a href="https://goo.gl/maps/E68QJWczr11sdBMz9" style="color: black;">📍MAPS</a>
+                    <p>Dichpally Ramalayam is a Lord Rama temple located in Nizamabad, Telangana built in 14th century by Kakatiya 
+                        kings. As the temple has a lot of resemblance in its style and structure, it is also called the Indhoor
+                         Khajuraho or the Khajuraho of Nizamabad. This is also called Khilla Ramalayam[1]</p>
+                </div>
+            </div>
+            <div id="popup-image20" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="elgandal fort(kar).jpg">
+                    <a href="https://goo.gl/maps/Y4Ug1NMQJntWbWPd6" style="color: black;">📍MAPS</a>
+                    <p>Elgandal Fort is situated amidst palm groves on the banks of the Manair River (a tributary of the Godavari
+                         River), approximately 10 kilometres (6.2 mi) from Karimnagar on the Sircilla Road in the Indian state of
+                          Telangana. It was once under the control of the Qutub Shahi dynasty, the Mughal Empire, and the Nizams of 
+                          Hyderabad. During the Nizam era it was the headquarters of Karimnagar. It is believed that a secret tunnel
+                           connects Elgandal Fort and Manakondur some 9 kilometres (5.6 mi) from Karimnagar on the
+                            Karimnagar-Vemulawada highway.[1]</p>
+                </div>
+            </div>
+            <div id="popup-image21" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="jainath temple.jpg">
+                    <a href="https://goo.gl/maps/Cqjxb6QaAKT7pyMf6" style="color: black;">📍MAPS</a>
+                    <p>Sri Narayan Swamy Temple also known as Jainath Temple is an ancient temple built by Pallava chiefs. 
+                        This temple is also popular for its Jain style architecture, thus, the village is called Jainath. 
+                        The pillars inside the temple are extensive carved with beautiful sculptures. The outer walls of the temple 
+                        and the vimana over the sanctum exhibit wonderful piece of art work.
+                    </p>
+                </div>
+            </div>
+            <div id="popup-image22" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="kadam dam.jpg">
+                    <a href="https://goo.gl/maps/neTMcC84CxBECvkW6" style="color: black;">📍MAPS</a>
+                    <p>The Kadem Project is a reservoir on the river Kadem, a tributary river of Godavari near Kademm Mandal, 
+                        Nirmal District, Telangana. This project covers localised ayacut under Nirmal and Mancherial Districts.[2]
+
+                        The Project has been integrated with Sriram Sagar Project. The reservoir being supplemented through Sri Rama
+                         Sagar Project by Saraswathi Canal to stabilize the localized catchment area.[citation needed]
+                        
+                        It has two major canals for water distribution, the Left canal length is 76.8 km and Right Canal length is
+                         about 8 km.</p>
+                </div>
+            </div>
+            <div id="popup-image23" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="kaleshwaram temple(kar).jpg">
+                    <a href="https://goo.gl/maps/nYLVy8icJYKpfSnA9" style="color: black;">📍MAPS</a>
+                    <p>Kaleshwaram is a village in Mahadevpur Mandal in Jayashankar Bhupalpally district in the Indian state of
+                         Telangana. This name refers more broadly to the state of Telangana & Kaleshwaram Temple.
+
+                        Kaleshwaram is at the juncture of the rivers Godavari and its Pranahita tributary. It is 277 kilometres from 
+                        Hyderabad, 125 kilometres from Karimnagar, 130 kilometres from Warangal, 95 kilometres from Ramagundam 
+                        railway station, 60 kilometres from Godavarikhani, 75 kilometres from Parkal and 60 kilometres from Manthani.
+                         This place is also popularly known as second Kashi or southern Indian Kashi. It is 10 km from Sironcha,
+                          Maharashtra.</p>
+                </div>
+            </div>
+            <div id="popup-image24" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="kanakai water falls.jpg">
+                    <a href="https://goo.gl/maps/tcy2o6Zdc8XqHiPh9" style="color: black;">📍MAPS</a>
+                    <p>The place Ichoda is at a distance of 272 Kms from Hyderabad towards Adilabad on National Highway 7.
+                         From Ichoda, you have to drive towards bazarhatnoor, on your way you will cross the villages,
+                          Adegaon khurd, Pipri and reach Girnur. After driving for 1 Km from Girnur village, you will see a
+                           sign board that indicates you to drive through a dirt road on the left to reach the Kanakadurga 
+                           temple and waterfalls. You vehicle can go only till here. From the temple, you need to go on foot
+                            to reach the beautiful waterfalls. If you want to make it a safe trip, you can stop at Girnur village 
+                            and hire a guide.</p>
+                </div>
+            </div>
+            <div id="popup-image25" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="kawal wild life sanctuary.jpg">
+                    <a href="https://goo.gl/maps/FGVFacX3YLrvrNNE6" style="color: black;">📍MAPS</a>
+                    <p>Kawal Tiger Reserve is a nature preserve located at Jannaram mandal of Mancherial District
+                         (Old Adilabad district) in the Telangana state of India.[1][2] The government of India declared Kawal
+                          Wildlife Sanctuary to be a Tiger Reserve in 2012.[3] The reserve is the oldest sanctuary in the northern
+                           Telangana region of the state. It is well known for its abundant flora and fauna. This sanctuary is 
+                           catchment for the rivers Godavari and Kadam, which flow towards the south of the sanctuary.[4]</p>
+                </div>
+            </div>
+            <div id="popup-image26" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="khammam fort.jpg">
+                    <a href="https://goo.gl/maps/dd7KLW9EkQvvU9EX8" style="color: black;">📍MAPS</a>
+                    <p>Khammam Fort is a fort in the city of Khammam, Telangana, India constructed by [[Lakshma Reddy, Ranga Reddy
+                         and Velama Reddy]. It served as an impregnable citadel during various regimes of different dynasties,
+                          including the Musunuri Nayaks, Qutb Shahi’s and Asaf Jahis. The fort was situated in a very vast area 
+                          in the heart of the City of Khammam. It was notified as a protected monument by the Archaeology Department 
+                          several decades ago. Despite decades of neglect, the historical edifice, which once flourished with regal
+                           opulence, presents its alluring charm due to its architectural splendor.</p>
+                </div>
+            </div>
+            <div id="popup-image27" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="koilsagar dam.jpg">
+                    <a href="https://goo.gl/maps/8NjYT6NoQUyi7eTG6" style="color: black;">📍MAPS</a>
+                    <p>Koila Sagar Project: It is a medium size irrigation project constructed at a cost of Rs. 80 crores during
+                         Nizam government period during 1945-48. It is located about 12 Kms from the Devarakonda Mandal head quarters
+                          in between Mahabubnagar and Raichur. This project was constructed to meet the irrigation needs about 12 
+                          thousands acres. It is a beautiful project and was constructed in a picturesque location between two
+                           mountains on Peddavagu River. There is a guest house near the project from there one can have a beautiful 
+                           look of the project.</p>
+                </div>
+            </div>
+            <div id="popup-image28" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="kuntala water falls.jpg">
+                    <a href="https://goo.gl/maps/LegtjYXe64k3243Z7" style="color: black;">📍MAPS</a>
+                    <p>Kuntala Waterfall is a waterfall of Telangana state in India, located on Kadam river in Neradigonda mandal 
+                        of Adilabad district.[1] It is the highest waterfall in the state with a height of 150 meters.[2]
+
+                        These waterfalls are in the dense forests inhabited by the Gonds. Kunta in Gondi and Telugu means pond.
+                         Kuntalu means several ponds. The waterfall originates from a confluence of several ponds that lead to 
+                         the river Kadem.[3]</p>
+                </div>
+            </div>
+            <div id="popup-image29" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="lakaram lake.jpg">
+                    <a href="https://goo.gl/maps/tzgHMDd47fa3E8gbA" style="color: black;">📍MAPS</a>
+                    <p>Khammam Lakaram Park is an artificial lake that is one of the major attractions. Thummala Gadda Cheruvu 
+                        is now constructed as a park to serve drinking water for the sub-urban region Khanapuram Haveli in Khammam.
+                         Most people use Lakaram water for irrigation and also for drinking purposes too.</p>
+                </div>
+            </div>
+            <div id="popup-image30" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="lower manair dam(kar).jpg">
+                    <a href="https://goo.gl/maps/NkwmB6SiRzjBxfxS7" style="color: black;">📍MAPS</a>
+                    <p>Lower Manair Dam also known as LMD[2] was constructed across the Manair River, at Alugunur village, Thimmapur
+                         mandal, Karimnagar District, in the Indian state of Telangana during 1974 to 1985. It provides irrigation
+                          to a gross command area of 163,000 hectares (400,000 acres).</p>
+                </div>
+            </div>
+            <div id="popup-image31" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="mallela theertham.jpg">
+                    <a href="https://goo.gl/maps/SFzUy25vyjNjo8cz8" style="color: black;">📍MAPS</a>
+                    <p>Mallela Theertham is in the middle of the dense forest. A walk down 350 steps is required to access the 
+                        waterfall.
+
+                        The best flows are from the months of October to February.March to June is the dry season. The remaining
+                         months are rainy months, and it is very difficult to drive on the muddy road. The water comes from a small
+                          rivulet and from this area,
+                        
+                        It flows through the dense jungle and then meets the Krishna River. This place is near to Achampet.
+                        
+                        </p>
+                </div>
+            </div>
+            <div id="popup-image32" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="medak church.jpg">
+                    <a href="https://goo.gl/maps/EkvKdtr1AEL6Evq88" style="color: black;">📍MAPS</a>
+                    <p>Medak Cathedral is one of the most visited churches in South India, which was built by Charles Walker
+                         Fasnet of British Wesleyan Methodists and consecrated on 25 December 1924. It is the single largest
+                          diocese in Asia and the second-largest in the world after the Vatican located in Medak town.
+
+                    </p>
+                </div>
+            </div>
+            <div id="popup-image33" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="medak fort.jpg">
+                    <a href="https://goo.gl/maps/g6CriC7F3fyrjMuGA" style="color: black;">📍MAPS</a>
+                    <p>Medak Fort is a heritage structure and a popular tourist attraction of Medak town. The fort is of immense
+                         historical and architectural importance in the region of Telangana. The Medak Fort is a huge structure 
+                         that takes nestling on the top of a hill. </p>
+                </div>
+            </div>
+            <div id="popup-image34" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="molangur fort(kar).jpg">
+                    <a href="https://goo.gl/maps/58fD7Lnp1gxH4p3j9" style="color: black;">📍MAPS</a>
+                    <p>At a distance of 1.2 km from Molangur Bus Station, 31 km from Karimnagar and 169 km from Hyderabad,
+                         Molangur Fort is located at Molangur in Karimnagar District of Telangana.
+
+                        The Molangur fort was constructed on a hillock by Voragiri Moggaraju, one of the chief officers of 
+                        Prathapa Rudra of Kakatiya dynasty. It was constructed as a transit halt for Kakatiyas while travelling 
+                        from Warangal fort to Elgandal Fort in Karimnagar. The Molangur fort is listed as protected site by the
+                         Archaeological Department.
+                        </p>
+                </div>
+            </div>
+            <div id="popup-image35" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="pachala someshwar temple.jpg">
+                    <a href="https://goo.gl/maps/RECr5sDonfj5SFeb9" style="color: black;">📍MAPS</a>
+                    <p>Pachala Someswara Temple is a Saivite Hindu temple located in Panagal of Nalgonda district, Telangana, India.
+                         It is a popular pilgrimage site during Maha Sivaratri. The idol of the deity here is carved out of green 
+                         onyx which gives the temple its name - Pacha in Telugu means Green. The temple is in close proximity to 
+                         Chaya Someswara Temple, another Saivite shrine in Panagal.[1] The temples dates to 11th to 12th centuries
+                          CE and was probably built during the rule of Kunduru Chodas and Prataparudra I of Kakatiya Empire over 
+                          the Panagal region.[2][3]</p>
+                </div>
+            </div>
+            <div id="popup-image36" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="pillalamarri shiva temple.jpg">
+                    <a href="https://goo.gl/maps/Av2PjBrMamyhJ19c8" style="color: black;">📍MAPS</a>
+                    <p>Erakeswara Temple is a Saivite Hindu temple located in the western side of Pillalamarri village, Suryapet 
+                        district of Telangana, India. The temple was built on the banks of the Musi river in c. 1208 CE by Erakasani,
+                         the wife of Bēti Reddi of the Recherla family who were the feudatories of Kakatiyas.[1][2][3][4][5] 
+                         Erakeswara Temple is one among the four prominent and intricately carved stone and granite temples located 
+                         in Pillalamarri village—the other three are about 250 metres east of the Erakeswara temple. These include
+                          the double temples next to each other: Nameswara Temple and Trikuteswara Temple (both Shiva); and the 
+                          third being the Chennakesava Temple (Vishnu) in ruins that is a few hundred feet southwest of the double
+                           temples. They are all from 12th to early 13th century period.</p>
+                </div>
+            </div>
+            <div id="popup-image37" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="pocharam reservoir.jpg">
+                    <a href="https://goo.gl/maps/TLeWdu5SXrt1gbFS7" style="color: black;">📍MAPS</a>
+                    <p>The Nizam’s Bungalow, situated near the reservoir, was constructed in 1918. The island located in the
+                         center of the reservoir is home to various species of shrubs. Boats are available near the reservoir 
+                         for reaching the island. The reservoir serves as a storage point on the Allair River and is also a 
+                         favorite picnic spot for travelers who thoroughly enjoy fishing at this reservoir. Medak can be reached
+                          by NH7 highway from Hyderabad within two hours. </p>
+                </div>
+            </div>
+            <div id="popup-image38" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="pocharam wild  life sanctuary(niz).jpg">
+                    <a href="https://goo.gl/maps/o48bFXsTsEeGZ8Ve6" style="color: black;">📍MAPS</a>
+                    <p>Pocharam Wildlife Sanctuary is a forest and wildlife sanctuary located 15 km (9.3 mi) from Medak 
+                        and 115 km (71 mi) from Hyderabad, Telangana, India.[2] Spanning over 130 square kilometres (50 sq mi),
+                         in the districts of Nizamabad and Medak,[3] it was a former hunting ground of the Nizam that was declared a
+                          wildlife sanctuary in the early 20th century. It is named after the Pocharam lake, formed from the bunding
+                           of the Allair from 1916-1922. The sanctuary has an ecotourism center for visitors. It is home to many 
+                           species of birds and mammals. The sanctuary is situated 100 km from Nizamabad city.</p>
+                </div>
+            </div>
+            <div id="popup-image39" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="pochera water falls.jpg">
+                    <a href="https://goo.gl/maps/6X686opsqZ3NHHvb6" style="color: black;">📍MAPS</a>
+                    <p>The fall is 20 meter high and flows down with a great force, and the falls are categorized as plunge
+                         waterfalls. The holy river Godavari flows through the Sahyadri mountain range and on their way, 
+                         the river breaks into small streams. Some of these streams escape from their path and meet at a
+                          point and become the source for the Pochera falls which falls from a 20 meters high point. The 
+                          bed is much deeper and has the capacity to hold a very huge quantity of water. We can hear water 
+                          roaring at a high pitch, exhibiting the power of nature. This place may scare you during night with 
+                          only the moon lighting it up. The waterfall which is extremely beautiful and very scary at the same 
+                          time is one of its kinds in the entire state and is rarely found in the country.</p>
+                </div>
+            </div>
+            <div id="popup-image40" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="polair reserviour.jpg">
+                    <a href="https://goo.gl/maps/gVXk1Mw1P6w1daEQ8" style="color: black;">📍MAPS</a>
+                    <p>Palair Lake also known as Paler (Palair) Reservoir is a man made lake and a major source of freshwater in 
+                        the Khammam district of Telangana, India.[1]</p>
+                </div>
+            </div>
+            <div id="popup-image41" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="pranahitha.jpg">
+                    <a href="https://goo.gl/maps/Zdt8QAsh6vodUfZD6" style="color: black;">📍MAPS</a>
+                    <p>This Wildlife Sanctuary is located in the Adilabad district of Telangana, in the extremely scenic landscape
+                         of the Deccan plateau. The Pranahita wildlife sanctuary covers an area of about 136sq.kms and is full of
+                          lush and dark teak forests. The river Pranahita carves its way in to this amazing sanctuary making it 
+                          even more beautiful.
+
+                    </p>
+                </div>
+            </div>
+            <div id="popup-image42" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="rajolibanda dam.jpg">
+                    <a href="https://goo.gl/maps/atxAMu6DCEK595NP9" style="color: black;">📍MAPS</a>
+                    <p>"Rajaolibanda Diversion Scheme" or "RDS" is an irrigation project located across River Tungabhadra in 
+                        Jogulamba Gadwal district of Telangana , Kurnool district of Andhra pradesh and Raichur district of 
+                        Karnataka.[1] It is an inter-state barrage on the Tungabhadra river to supply water to Karnataka, 
+                        Telangana and Andhra Pradesh states.[2] The full reservoir level of this project is 332.32 m MSL.[3]
+
+                    </p>
+                </div>
+            </div>
+            <div id="popup-image43" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="ramappa lake.jpg">
+                    <a href="https://goo.gl/maps/Ygs54fE6R5wepxHLA" style="color: black;">📍MAPS</a>
+                    <p>Ramappa Lake is a lake situated in Warangal district, Telangana, India. The lake is one of the prominent
+                         reservoirs built by Kakatiya rulers.[1] It is situated in Warangal district.</p>
+                </div>
+            </div>
+            <div id="popup-image44" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="ramappa temple.jpg">
+                    <a href="https://goo.gl/maps/HNboZPh8F2NFHWZU6" style="color: black;">📍MAPS</a>
+                    <p>It's probably the only temple in the country to be known by the name of its sculptor. The medieval Deccan 
+                        Ramappa Temple which dates back to 1213 AD, was built by the patronage of the Kakatiya ruler Kakati 
+                        Ganapathi Deva under the authority of his Chief Commander Rudra Samani at the place known as Ranakude
+                         in the Atukuru province. The Ramappa temple is the right destination for people who admire architectural 
+                         brilliance and have a panoramic view of true scenic beauty. The temple is situated in Palampet village
+                          of the Venkatapur Mandal, in Mulug Taluq of Warangal.</p>
+                </div>
+            </div>
+            <div id="popup-image45" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="singur dam.jpg">
+                    <a href="https://goo.gl/maps/5TdLK4QcGjivby6D9" style="color: black;">📍MAPS</a>
+                    <p>The reservoir’s breathtaking sight coupled with the flora and fauna surrounding the waters is a huge 
+                        attraction for tourists, mainly owing to its location in the rural belt which makes it more pleasant
+                         and adorable.</p>
+                </div>
+            </div>
+            <div id="popup-image46" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="sri ranga nayaka temple.jpg">
+                    <a href="https://goo.gl/maps/SWdFAeVnpPqNCxix9" style="color: black;">📍MAPS</a>
+                    <p>According to legend, Krishnadevaraya, the Vijayanagar ruler, went to Srirangam and was enthralled by the
+                         Sri Ranganayakaswamy Temple there. He desired to construct a Ranganayakaswamy temple in his kingdom. 
+                         Later, Ranganayaka (Lord Vishnu) appeared in dream and told the king that his idol is lying in the 
+                         kingdom and an eagle will direct him to that place. The succeeding day, Krishnadevaraya followed 
+                         the eagle and found the Lord’s idol between Kothakota and Kanvayapally mountains. The king constructed
+                          the SriRanganayakaswamyTemple near RatnaPushkariniLake. The temple is a classic example of Vijayanagar
+                           architecture. The temple was built by the Rajas of Wanaparthi Samsthanam on the bund of Ratna 
+                           Pushpakarini lake.</p>
+                </div>
+            </div>
+            <div id="popup-image47" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="swamy ayappa temple.jpg">
+                    <a href="https://goo.gl/maps/WyghLZsTqk9hSyU36" style="color: black;">📍MAPS</a>
+                    <p>The Ayyappa Swamy Temple is located in Bichkunda Village & Mandal of Kamareddy District. It is one of
+                         the largest pilgrimage temple in the District with many devotees visiting every day. The temple is 
+                         dedicated to a Hindu celibate deity Ayyappan also known as Dharma Shasta, who according to belief
+                          is the son of Shiva and Mohini, the feminine incarnation of Vishnu.</p>
+                </div>
+            </div>
+            <div id="popup-image48" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="vemulawada(kar).jpg">
+                    <a href="https://goo.gl/maps/BVVEdmp6CxAdi3LFA" style="color: black;">📍MAPS</a>
+                    <p>Vemulawada is an ancient historical and a famous pilgrimage census town in Rajanna Sircilla district
+                         of the Indian state of Telangana.[2] It is the headquarters of Vemulawada Mandal and Revenue Division.
+                          The place is notable for Sri Raja Rajeswara Swamy temple,which is also known as “ Dakshina kashi” 
+                          constructed between 760 and 973 CE, and a site of pilgrimage for Hindu worshipers. It also has ancient
+                           temples of Bheemeswara, Nagareswara and Pochamma nearby the main temple of Sri Raja Rajeswara Swamy.
+                            It was the capital of Vemulawada Chalukyas, that ruled present day Telangana, parts of Andhra Pradesh,
+                             Karnataka and Maharashtra between 7 and 10 century CE. The town attracts large number of pilgrims from
+                              South India as well as Maharashtra, Odisha and Chhattisgarh. Huge number of devotees throng the place
+                               during Maha Shivaratri and Sri Rama Navami. The famous floral festival of Telangana, Bathukamma is
+                                believed to have originated from this place.</p>
+                </div>
+            </div>
+            <div id="popup-image49" class="popup-image">
+                <span>&times;</span>
+                <div class="m1">
+                    <img src="salar jung museum.jpg">
+                    <a href="https://goo.gl/maps/6uExg6fTweCBpwZq6" style="color: black;">📍MAPS</a>
+                    <p>The Salar Jung Museum is an art museum located at Dar-ul-Shifa, on the southern bank of the Musi 
+                        River in the city of Hyderabad, Telangana, India. It is one of the notable National Museums of India
+                        .[1] Originally a private art collection of the Salar Jung family, it was endowed to the nation after
+                         the death of Salar Jung III. It was inaugurated on 16 December 1951.
+
+                    </p>
+                </div>
+            </div>
+        </div>  
+    <script>
+        document.querySelectorAll('.img-container #c1').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image1').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c2').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image2').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c3').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image3').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c4').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image4').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c5').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image5').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c6').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image6').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c7').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image7').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c8').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image8').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c9').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image9').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c10').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image10').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c11').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image11').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c12').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image12').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c13').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image13').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c14').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image14').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c15').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image15').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c16').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image16').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c17').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image17').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c18').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image18').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c19').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image19').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c20').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image20').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c21').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image21').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c22').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image22').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c23').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image23').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c24').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image24').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c25').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image25').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c26').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image26').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c27').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image27').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c28').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image28').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c29').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image29').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c30').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image30').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c31').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image31').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c32').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image32').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c33').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image33').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c34').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image34').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c35').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image35').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c36').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image36').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c37').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image37').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c38').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image38').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c39').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image39').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c40').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image40').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c41').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image41').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c42').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image42').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c43').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image43').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c44').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image44').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c45').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image45').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c46').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image46').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c47').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image47').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c48').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image48').style.display="block";
+            }
+        });
+        document.querySelectorAll('.img-container #c49').forEach(image=>{
+            image.onclick=()=>{
+                document.querySelector('#popup-image49').style.display="block";
+            }
+        });
+        document.querySelector('#popup-image1 span').onclick=()=>{
+                document.querySelector('#popup-image1').style.display="none";
+            }
+        document.querySelector('#popup-image2 span').onclick=()=>{
+                document.querySelector('#popup-image2').style.display="none";
+            }
+        document.querySelector('#popup-image3 span').onclick=()=>{
+                document.querySelector('#popup-image3').style.display="none";
+            }
+            document.querySelector('#popup-image4 span').onclick=()=>{
+                document.querySelector('#popup-image4').style.display="none";
+            }
+            document.querySelector('#popup-image5 span').onclick=()=>{
+                document.querySelector('#popup-image5').style.display="none";
+            }
+            document.querySelector('#popup-image6 span').onclick=()=>{
+                document.querySelector('#popup-image6').style.display="none";
+            }
+            document.querySelector('#popup-image7 span').onclick=()=>{
+                document.querySelector('#popup-image7').style.display="none";
+            }
+            document.querySelector('#popup-image8 span').onclick=()=>{
+                document.querySelector('#popup-image8').style.display="none";
+            }
+            document.querySelector('#popup-image9 span').onclick=()=>{
+                document.querySelector('#popup-image9').style.display="none";
+            }
+            document.querySelector('#popup-image10 span').onclick=()=>{
+                document.querySelector('#popup-image10').style.display="none";
+            }
+            document.querySelector('#popup-image11 span').onclick=()=>{
+                document.querySelector('#popup-image11').style.display="none";
+            }
+            document.querySelector('#popup-image12 span').onclick=()=>{
+                document.querySelector('#popup-image12').style.display="none";
+            }
+            document.querySelector('#popup-image13 span').onclick=()=>{
+                document.querySelector('#popup-image13').style.display="none";
+            }
+            document.querySelector('#popup-image14 span').onclick=()=>{
+                document.querySelector('#popup-image14').style.display="none";
+            }
+            document.querySelector('#popup-image15 span').onclick=()=>{
+                document.querySelector('#popup-image15').style.display="none";
+            }
+            document.querySelector('#popup-image16 span').onclick=()=>{
+                document.querySelector('#popup-image16').style.display="none";
+            }
+            document.querySelector('#popup-image17 span').onclick=()=>{
+                document.querySelector('#popup-image17').style.display="none";
+            }
+            document.querySelector('#popup-image18 span').onclick=()=>{
+                document.querySelector('#popup-image18').style.display="none";
+            }
+            document.querySelector('#popup-image19 span').onclick=()=>{
+                document.querySelector('#popup-image19').style.display="none";
+            }
+            document.querySelector('#popup-image20 span').onclick=()=>{
+                document.querySelector('#popup-image20').style.display="none";
+            }
+            document.querySelector('#popup-image21 span').onclick=()=>{
+                document.querySelector('#popup-image21').style.display="none";
+            }
+            document.querySelector('#popup-image22 span').onclick=()=>{
+                document.querySelector('#popup-image22').style.display="none";
+            }
+            document.querySelector('#popup-image23 span').onclick=()=>{
+                document.querySelector('#popup-image23').style.display="none";
+            }
+            document.querySelector('#popup-image24 span').onclick=()=>{
+                document.querySelector('#popup-image24').style.display="none";
+            }
+            document.querySelector('#popup-image25 span').onclick=()=>{
+                document.querySelector('#popup-image25').style.display="none";
+            }
+            document.querySelector('#popup-image26 span').onclick=()=>{
+                document.querySelector('#popup-image26').style.display="none";
+            }
+            document.querySelector('#popup-image27 span').onclick=()=>{
+                document.querySelector('#popup-image27').style.display="none";
+            }
+            document.querySelector('#popup-image28 span').onclick=()=>{
+                document.querySelector('#popup-image28').style.display="none";
+            }
+            document.querySelector('#popup-image29 span').onclick=()=>{
+                document.querySelector('#popup-image29').style.display="none";
+            }
+            document.querySelector('#popup-image30 span').onclick=()=>{
+                document.querySelector('#popup-image30').style.display="none";
+            }
+            document.querySelector('#popup-image31 span').onclick=()=>{
+                document.querySelector('#popup-image31').style.display="none";
+            }
+            document.querySelector('#popup-image32 span').onclick=()=>{
+                document.querySelector('#popup-image32').style.display="none";
+            }
+            document.querySelector('#popup-image33 span').onclick=()=>{
+                document.querySelector('#popup-image33').style.display="none";
+            }
+            document.querySelector('#popup-image34 span').onclick=()=>{
+                document.querySelector('#popup-image34').style.display="none";
+            }
+            document.querySelector('#popup-image35 span').onclick=()=>{
+                document.querySelector('#popup-image35').style.display="none";
+            }
+            document.querySelector('#popup-image36 span').onclick=()=>{
+                document.querySelector('#popup-image36').style.display="none";
+            }
+            document.querySelector('#popup-image37 span').onclick=()=>{
+                document.querySelector('#popup-image37').style.display="none";
+            }
+            document.querySelector('#popup-image38 span').onclick=()=>{
+                document.querySelector('#popup-image38').style.display="none";
+            }
+            document.querySelector('#popup-image39 span').onclick=()=>{
+                document.querySelector('#popup-image39').style.display="none";
+            }
+            document.querySelector('#popup-image40 span').onclick=()=>{
+                document.querySelector('#popup-image40').style.display="none";
+            }
+            document.querySelector('#popup-image41 span').onclick=()=>{
+                document.querySelector('#popup-image41').style.display="none";
+            }
+            document.querySelector('#popup-image42 span').onclick=()=>{
+                document.querySelector('#popup-image42').style.display="none";
+            }
+            document.querySelector('#popup-image43 span').onclick=()=>{
+                document.querySelector('#popup-image43').style.display="none";
+            }
+            document.querySelector('#popup-image44 span').onclick=()=>{
+                document.querySelector('#popup-image44').style.display="none";
+            }
+            document.querySelector('#popup-image45 span').onclick=()=>{
+                document.querySelector('#popup-image45').style.display="none";
+            }
+            document.querySelector('#popup-image46 span').onclick=()=>{
+                document.querySelector('#popup-image46').style.display="none";
+            }
+            document.querySelector('#popup-image47 span').onclick=()=>{
+                document.querySelector('#popup-image47').style.display="none";
+            }
+            document.querySelector('#popup-image48 span').onclick=()=>{
+                document.querySelector('#popup-image48').style.display="none";
+            }
+            document.querySelector('#popup-image49 span').onclick=()=>{
+                document.querySelector('#popup-image49').style.display="none";
+            }
+            const toggleBtn=document.querySelector('.toggle_btn')
+            const toggleBtnIcon=document.querySelector('.toggle_btn i')
+            const dropDownMenu=document.querySelector('.dropdown_menu')
+            toggleBtn.onclick=function(){
+                dropDownMenu.classList.toggle('open')
+                const isOpen=dropDownMenu.classList.contains('open')
+                toggleBtnIcon.classList=isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+    </script>
+   </body>
+</html>
